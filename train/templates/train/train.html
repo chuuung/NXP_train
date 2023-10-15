@@ -1,13 +1,64 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <style>
+      .train{
+        z-index: -1;
+        height: 170px;
+      }
+      #head{
+      position: absolute;
+      top: 330px;
+      left: 220px;
+      width: 252px;
+      background-color: #C7EFCF;
+      border-radius: 110px 15px 15px 15px;
+      }
+      #left{
+      position: absolute;
+      top: 330px;
+      /*left: 490px;*/
+      right: 50.3%;
+      width: 225px;
+      background-color: #C7EFCF;
+      border-radius: 15px 15px 15px 15px;
+      }
+      #right{
+      position: absolute;
+      top: 330px;
+      /*left: 725px;*/
+      left: 50.3%;
+      width: 225px;
+      background-color: #C7EFCF;
+      border-radius: 15px 15px 15px 15px;
+      }
+      #end{
+      position: absolute;
+      top: 330px;
+      right: 220px;
+      width: 252px;
+      background-color: #C7EFCF;
+      border-radius: 15px 110px 15px 15px;
+      }
+    </style>
     <title>Title</title>
   </head>
   <body>
     <div class='container'>
       <h1>HOME</h1>
       <h2>Hello World!</h2>
+      <center>
+        <div>
+          <div id="head" class="train"></div>
+          <div id="left" class="train"></div>
+          <div id="right" class="train"></div>
+          <div id="end" class="train"></div>
+          <img src="{% static 'train-2.png' %}">
+          <img src="{% static 'train-2.png' %}" style="transform:scaleX(-1);">
+        </div>
+      </center>
     </div>
   </body>
 </html>
