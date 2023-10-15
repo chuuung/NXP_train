@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+  <script src="{% static 'temperature.js' %}"></script>
   <head>
     <meta charset="UTF-8">
     <style>
@@ -59,6 +60,8 @@
           <img src="{% static 'train-2.png' %}" style="transform:scaleX(-1);">
         </div>
       </center>
+      <button onclick="check_pnumber()">Check people!</button>
+
     </div>
   </body>
 </html>
