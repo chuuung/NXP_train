@@ -9,9 +9,36 @@
         z-index: -1;
         height: 170px;
       }
+      .info{
+        font-size: 70px;
+        top: 200px;
+      }
+      .info_container{
+        display: inline-block;
+        position: relative;
+      }
+      #info1{
+        left: 250px;
+        top: 120px;
+      }
+      #info2{
+        left: 320px;
+        top: 120px;
+      }
+      #info3{
+        left: 380px;
+        top: 120px;
+      }
+      #info4{
+        left: 450px;
+        top: 120px;
+      }
+      .unit{
+        font-size: 30px;
+      }
       #head{
       position: absolute;
-      top: 330px;
+      top: 300px;
       left: 220px;
       width: 252px;
       background-color: #C7EFCF;
@@ -19,7 +46,7 @@
       }
       #left{
       position: absolute;
-      top: 330px;
+      top: 300px;
       /*left: 490px;*/
       right: 50.3%;
       width: 225px;
@@ -28,7 +55,7 @@
       }
       #right{
       position: absolute;
-      top: 330px;
+      top: 300px;
       /*left: 725px;*/
       left: 50.3%;
       width: 225px;
@@ -37,7 +64,7 @@
       }
       #end{
       position: absolute;
-      top: 330px;
+      top: 300px;
       right: 220px;
       width: 252px;
       background-color: #C7EFCF;
@@ -47,9 +74,35 @@
     <title>Title</title>
   </head>
   <body>
-    <div class='container'>
-      <h1>HOME</h1>
-      <h2>Hello World!</h2>
+    <div>
+      <div class="info_container" id="info1">
+        <span class="info" id="temp1">0</span>
+        <span class="unit">°C</span>
+        <span class="info" id="people1">0</span>
+        <span class="unit">人</span>
+      </div>
+
+      <div class="info_container" id="info2">
+        <span class="info" id="temp2">0</span>
+        <span class="unit">°C</span>
+        <span class="info" id="people2">0</span>
+        <span class="unit">人</span>
+      </div>
+
+      <div class="info_container" id="info3">
+        <span class="info" id="temp3">0</span>
+        <span class="unit">°C</span>
+        <span class="info" id="people3">0</span>
+        <span class="unit">人</span>
+      </div>
+
+      <div class="info_container"  id="info4">
+        <span class="info" id="temp4">0</span>
+        <span class="unit">°C</span>
+        <span class="info" id="people4">0</span>
+        <span class="unit">人</span>
+      </div>
+
       <center>
         <div>
           <div id="head" class="train"></div>

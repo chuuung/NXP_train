@@ -26,8 +26,10 @@ function check_pnumber(){
     }
 
     console.log(train_people);
+
     for (var i = 0; i < train.length; i++) {
         document.getElementById(train[i]).style.backgroundColor = p_color(train_people[i]);
+        document.getElementById("people" + String(i+1)).innerHTML = String(train_people[i]);
     }
 }
 
