@@ -34,3 +34,6 @@ def train(request):
     check_number()
     return render(request, 'train/train.html',context=context)
 
+def feedback(request):
+    return render(request, 'train/feedback.html')
+
