@@ -7,11 +7,12 @@ import json
 from pathlib import Path
 
 # Create your views here.
+INI_temperature = 27
 context = {
-    't1' : {"t":0, "p": 1},
-    't2' : {"t":0, "p": 1},
-    't3' : {"t":0, "p": 1},
-    't4' : {"t":0, "p": 5},
+    't1' : {"t":INI_temperature, "p": 1},
+    't2' : {"t":INI_temperature, "p": 1},
+    't3' : {"t":INI_temperature, "p": 1},
+    't4' : {"t":INI_temperature, "p": 5},
 }
 
 def check_number():
