@@ -105,7 +105,7 @@ def feedback(request):
         #return render(request, 'train/feedback.html', {'form': form})
         if len(context["t3_m"]) >= 5:
             context["t3_m"].pop()
-            context["t3_m"].append(r)
+        context["t3_m"].append(r)
         return HttpResponseRedirect("/train/")
     
     else:
