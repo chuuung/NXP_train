@@ -13,7 +13,8 @@ context = {
     't1' : {"t":INI_temperature, "p": 1},
     't2' : {"t":INI_temperature, "p": 1},
     't3' : {"t":INI_temperature, "p": 1},
-    't4' : {"t":INI_temperature, "p": 5},
+    't4' : {"t":INI_temperature, "p": 30},
+    't3_m':[]
 }
 
 def check_number():
@@ -32,17 +33,40 @@ def check_number():
 
 def calculate_load():
     #standard temperture
-    standard_t = 27
-    area_btu = 31.78 * 2.56 * 31.25
+    standard_t = 25
+    area_btu = 23.5 * 3.2 * 3.6 * 31.25
+    #area_btu = 18000
     light_btu = 3 * 4.25
     heat_load = 0
+    ac = 2400
+    a = 18000/ac
+    b = 0.005
     for i in context:
-        occupant_btu = i['p'] * 600
+        if i == "t3_m":
+            break
+        print(type(i))
+        print(i)
+        occupant_btu = context[i]["p"] * 600
+        #occupant_btu = i['p'] * 600
         heat_load = area_btu + light_btu + occupant_btu
+        #caculate heat load
+    
+        #heat_load = ac * a + (context[i]['p'] - 5) * d
+        d = (heat_load - ac * a)/context[i]['p']
+        #caculate cooling capacity
+
+        new_t = INI_temperature - b * d
+        if new_t > 28:
+            new_t = 28.0
+        elif new_t < 23:
+            new_t = 23.0
+        
+        context[i]['t'] = round(new_t, 2)
 
 
 def train(request):
     check_number()
+    calculate_load()
     return render(request, 'train/train.html',context=context)
 
 def feedback(request):
@@ -79,6 +103,9 @@ def feedback(request):
             # redirect to a new URL:
             return HttpResponseRedirect("/thanks/")'''
         #return render(request, 'train/feedback.html', {'form': form})
+        if len(context["t3_m"]) >= 5:
+            context["t3_m"].pop()
+            context["t3_m"].append(r)
         return HttpResponseRedirect("/train/")
     
     else:

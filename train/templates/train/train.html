@@ -10,7 +10,7 @@
         height: 170px;
       }
       .info{
-        font-size: 70px;
+        font-size: 50px;
         top: 200px;
       }
       .info_container{
@@ -34,11 +34,11 @@
         top: 120px;
       }
       .unit{
-        font-size: 30px;
+        font-size: 25px;
       }
       #head{
       position: absolute;
-      top: 300px;
+      top: 270px;
       left: 220px;
       width: 252px;
       background-color: #C7EFCF;
@@ -46,7 +46,7 @@
       }
       #left{
       position: absolute;
-      top: 300px;
+      top: 270px;
       /*left: 490px;*/
       right: 50.3%;
       width: 225px;
@@ -55,7 +55,7 @@
       }
       #right{
       position: absolute;
-      top: 300px;
+      top: 270px;
       /*left: 725px;*/
       left: 50.3%;
       width: 225px;
@@ -64,7 +64,7 @@
       }
       #end{
       position: absolute;
-      top: 300px;
+      top: 270px;
       right: 220px;
       width: 252px;
       background-color: #C7EFCF;
@@ -114,7 +114,12 @@
         </div>
       </center>
       <button onclick="check_pnumber()">Check people!</button>
-
+      <img src="{% static 'messageImage_1697944608564.jpg'%}" style="width: 200px; left: 730px; position: absolute;bottom: 130px;">
+      <textarea style="width:200px;height:200px; left: 730px;position: absolute;bottom: -100px; resize: none;">
+        {% for x in t3_m %}
+          {{x}}
+        {% endfor %}    
+      </textarea>
     </div>
   </body>
 </html>
