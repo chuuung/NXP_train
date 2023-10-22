@@ -14,6 +14,7 @@ context = {
     't2' : {"t":INI_temperature, "p": 1},
     't3' : {"t":INI_temperature, "p": 1},
     't4' : {"t":INI_temperature, "p": 5},
+    't3_m': ["有人吃東西", "地上髒亂"],
 }
 
 def check_number():
@@ -79,6 +80,10 @@ def feedback(request):
             # redirect to a new URL:
             return HttpResponseRedirect("/thanks/")'''
         #return render(request, 'train/feedback.html', {'form': form})
+
+        if len(context["t3_m"]) >= 5:
+            context["t3_m"].pop()
+            context["t3_m"].append(r)
         return HttpResponseRedirect("/train/")
     
     else:
