@@ -1,0 +1,12 @@
+names:
+- passenger
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: project1-vbg5n
+  url: https://universe.roboflow.com/nycu-nmnx5/project1-vbg5n/dataset/1
+  version: 1
+  workspace: nycu-nmnx5
+test: ../final/valid_final/images
+train: ../final/train_final/images
+val: ../final/valid_final/images
